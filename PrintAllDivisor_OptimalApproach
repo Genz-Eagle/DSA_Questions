@@ -1,0 +1,30 @@
+// Don't need break statement if yu use this
+        for(int i=1; i*i <=num; i++)
+
+public class PrintAllDivisors{
+
+    public static void main(String[] args) {
+        int num = 36;
+        ArrayList<Integer> al = new ArrayList<>();
+        for(int i=1; i<=num; i++){
+            int quotient = 0;
+            if(num%i == 0){
+                al.add(i);
+                quotient = num/i;
+
+                if(i != num/i){
+                    al.add(quotient);
+                }
+                if(i == quotient){
+                    break;
+                }
+
+            }
+
+            System.out.println(i);
+
+        }
+        Collections.sort(al);
+        System.out.println(al);
+    }
+}
