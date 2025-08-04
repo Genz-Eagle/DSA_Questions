@@ -1,0 +1,53 @@
+package DSA;
+import java.util.ArrayList;
+
+// using ArrayList to store divisors
+
+//public class PrintAllDivisors {
+//    public static void findDivisors(int num){
+//        ArrayList<Integer> al = new ArrayList<>();
+//        for(int i=1; i<=num; i++){
+//            if(num%i == 0){
+//                al.add(i);
+//            }
+//        }
+//        System.out.println(al);
+//    }
+//
+//    public static void main(String[] args) {
+//        int num = 36;
+//        findDivisors(num);
+//    }
+//}
+
+// using Array to store Divisors
+public class PrintAllDivisors {
+    public static int[] findDivisors(int num){
+
+        int count = 0;
+        for(int i=1; i<=num; i++){
+            if(num%i == 0){
+                count++;
+            }
+        }
+        int arr[] = new int[count];
+        int index = 0;
+        for(int i=1; i<=num; i++){
+            if(num%i == 0){
+                arr[index] = i;
+                index++;
+            }
+        }
+
+        return arr;
+    }
+
+    public static void main(String[] args) {
+        int num = 36;
+        int arr[] = findDivisors(num);
+
+        for(int val : arr){
+            System.out.println(val);
+        }
+    }
+}
